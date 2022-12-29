@@ -13,5 +13,5 @@ if not os.path.exists('sponsor'):
     os.makedirs('sponsor')
 
 
-with io.open('sponsor/sponsors.json', 'w', encoding='utf=8') as f:
+with io.open('sponsor/data.json', 'w', encoding='utf=8') as f:
     f.write(json.dumps(data, ensure_ascii=False))
