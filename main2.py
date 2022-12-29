@@ -9,9 +9,9 @@ response = requests.get("https://changelog.qgis.org/en/qgis/members/json/")
 data = json.loads(response.text)
 
 
-if not os.path.exists('sponsors'):
-    os.makedirs('sponsors')
+if not os.path.exists('sponsor'):
+    os.makedirs('sponsor')
 
 
-with io.open('sponsors/data.json', 'w', encoding='utf=8') as f:
+with io.open('sponsor/data.json', 'w', encoding='utf=8') as f:
     f.write(json.dumps(data, ensure_ascii=False))
