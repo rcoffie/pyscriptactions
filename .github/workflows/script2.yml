@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
-      - name: Fetch latest data
-        run: python ./main.py
+      - name: Fetch sponsor data
+        run: python ./main2.py
