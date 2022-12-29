@@ -1,16 +1,26 @@
+
 name: Scrape latest data
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 0,12 * * *" # At midnight & noon UTC
+    - cron:  '0 0,12 * * *'  # At midnight & noon UTC
 
 jobs:
   scrape1:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out this repo
-        uses: actions/checkout@v2
-      - name: Fetch latest data
-        run: python ./main.py
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch latest data
+      run: python ./main.py
+
+  scrape2:
+    runs-on: ubuntu-latest
+    needs: scrape1
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch latest data
+      run: python ./main2.py
